@@ -13,16 +13,16 @@ class ImageDetectionManager {
     
     //The correct way to init a model https://developer.apple.com/forums/thread/671446
     
-//    let model: EmojiFoodClassifier_1 = {
-//        do {
-//            let config = MLModelConfiguration()
-//            return try EmojiFoodClassifier_1(configuration: config)
-//        } catch {
-//            print("Error trying to config the model \(error)")
-//            fatalError("Couldn't create MLModel")
-//        }
-//    }()
-    let model = EmojiFoodClassifier_1()
+    let model: _2022_11_21_FoodVisionV2_199_foods = {
+        do {
+            let config = MLModelConfiguration()
+            return try _2022_11_21_FoodVisionV2_199_foods(configuration: config)
+        } catch {
+            print("Error trying to config the model \(error)")
+            fatalError("Couldn't create MLModel")
+        }
+    }()
+//    let model = _2022_11_21_FoodVisionV2_199_foods()
 
     var predictionLabel: String = ""
     var otherPossiblePredictions: [String] = []

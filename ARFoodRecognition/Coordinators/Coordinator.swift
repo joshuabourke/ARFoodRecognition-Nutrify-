@@ -16,61 +16,63 @@ class Coordinator: NSObject, ARSessionDelegate {
     var updateSubscription: Cancellable!
     var arView: ARView?
 
-    var imDetection = ImageDetection()
+    //This predictiontitle is the title or string for once the vision model has said yes it is a food.
     var predictionTitle: String = ""
     
-    let viewModel = ViewModel()
+    @StateObject var lastScannedFoods: ViewModel
+    
+    @StateObject var imDetection: ImageDetection
     
     let dispatchQueueML = DispatchQueue(label: "com.hw.dispatchqueuem1")
+    //This prediction is the string from the vision model that runs everyframe
     var latestPrediction: String = ""
+    //These Bindings are for passing infomation from the Coordinator to the contentView
     @Binding var passedPrediction: String
     @Binding var passedImage: UIImage
+    @Binding var itemIsNotFood: Bool
+    @Binding var removeAllNodes: Bool
 
-    init(passPrediction: Binding<String>, passedImage: Binding<UIImage>){
+    init(passPrediction: Binding<String>, passedImage: Binding<UIImage>, itemIsNotFood: Binding<Bool>, imDetection: StateObject<ImageDetection>, removeAllNodes: Binding<Bool>, lastScannedFood: StateObject<ViewModel>){
+        _imDetection = imDetection
         _passedPrediction = passPrediction
         _passedImage = passedImage
+        _itemIsNotFood = itemIsNotFood
+        _removeAllNodes = removeAllNodes
+        _lastScannedFoods = lastScannedFood
     }
-    
-
     
     var visionRequests = [VNRequest]()
 
     var textEntities = [ModelEntity]()
     
     @objc func handleTap(_ recognizer: UITapGestureRecognizer) {
-            addNameAndSphereToScene()
-        guard let arView = arView else {return}
-
-            
-            if let img = arView.session.currentFrame?.capturedImage {
-                let ciimg = CIImage(cvImageBuffer: img)
-                let finImage = UIImage(ciImage: ciimg)
-                
-                let finishedImage = finImage.resizeImage(targetSize: CGSize(width: 500, height: 500))
-                //
-                self.viewModel.foodNameAndImage.append(LastScannedFoods(id: UUID().uuidString, foodName: self.latestPrediction, foodImage: finishedImage))
-                print("---------------- COUNT \(viewModel.foodNameAndImage.count)")
-            }
+        
+        addNameAndSphereToScene()
         
     }
     
     func addNameAndSphereToScene() {
         guard let arView = arView else {return}
         
-        
-        let screenCentre: CGPoint = CGPoint(x: arView.bounds.midX, y: arView.bounds.midY)
-        //Might want to try other allowing planes for future testing.
-        let results = arView.raycast(from: screenCentre, allowing: .existingPlaneInfinite, alignment: .horizontal)
-        
+        if itemIsNotFood{
+
+        } else{
+            imDetection.imageDetectionVM.detect(getImage(arView: arView))
+            predictionTitle = imDetection.imageDetectionVM.predictionLabel
+            
+            let screenCentre: CGPoint = CGPoint(x: arView.bounds.midX, y: arView.bounds.midY)
+            //Might want to try other allowing planes for future testing.
+            let results = arView.raycast(from: screenCentre, allowing: .existingPlaneInfinite, alignment: .horizontal)
+            
         if let result = results.first {
             let radians = Float.pi
             
             
             let parentAnchor = AnchorEntity(raycastResult: result)
             let sphere = ModelEntity(mesh: MeshResource.generateSphere(radius: 0.01), materials: [SimpleMaterial(color: .green, isMetallic: false)])
-//            let foodName = NameModelEntity(size: 0.003, color: .label, text: latestPrediction)
+            //            let foodName = NameModelEntity(size: 0.003, color: .label, text: latestPrediction)
             
-            let foodName = ModelEntity(mesh: MeshResource.generateText(latestPrediction, extrusionDepth: 0.005, font: .init(name: "Helvetica", size: 0.03)!, containerFrame: .zero, alignment: .center, lineBreakMode: .byCharWrapping), materials: [SimpleMaterial(color: .white, isMetallic: false)])
+            let foodName = ModelEntity(mesh: MeshResource.generateText(predictionTitle, extrusionDepth: 0.003, font: .init(name: "AppleSDGothicNeo-Medium", size: 0.02)!, containerFrame: .zero, alignment: .center, lineBreakMode: .byCharWrapping), materials: [SimpleMaterial(color: .white, isMetallic: true)])
             
             let foodNameMiddleValue = (foodName.model?.mesh.bounds.max.x)! - (foodName.model?.mesh.bounds.min.x)!
             
@@ -79,38 +81,64 @@ class Coordinator: NSObject, ARSessionDelegate {
             foodName.transform.rotation = simd_quatf(angle: radians, axis: SIMD3<Float>(0,1,0))
             foodName.position.x = foodNameMiddleValue / 2
             foodName.position.y += 0.01
-//            let name = ModelEntity(mesh: MeshResource.generateText(latestPrediction, extrusionDepth: 0.005, font: .systemFont(ofSize: 0.03), containerFrame: .zero, alignment: .center, lineBreakMode: .byCharWrapping), materials: [SimpleMaterial(color: .white, isMetallic: false)])
-//            name.transform.rotation = simd_quatf(angle: radians, axis: SIMD3<Float>(0,1,0))
-//            name.position.x += 0.05
+            //            let name = ModelEntity(mesh: MeshResource.generateText(latestPrediction, extrusionDepth: 0.005, font: .systemFont(ofSize: 0.03), containerFrame: .zero, alignment: .center, lineBreakMode: .byCharWrapping), materials: [SimpleMaterial(color: .white, isMetallic: false)])
+            //            name.transform.rotation = simd_quatf(angle: radians, axis: SIMD3<Float>(0,1,0))
+            //            name.position.x += 0.05
             
-            arView.snapshot(saveToHDR: false) { image in
-                self.passedImage = image ?? UIImage()
-            }
             
-//            if let img = arView.session.currentFrame?.capturedImage {
-//                let ciimg = CIImage(cvPixelBuffer: img)
-//                let finImage = UIImage(ciImage: ciimg)
-//                passedImage = finImage.resizeImage(targetSize: CGSize(width: 300, height: 300))
-//            }
+            //These 2 lines here are to take a screen shot of the ARSession. This will include the ARnode in the picture that the user will be able to see.
+            //            arView.snapshot(saveToHDR: false) { image in
+            //                self.passedImage = image ?? UIImage()
+            //            }
             
-            passedPrediction = latestPrediction
+            //This is a frame from the ARScene. This function takes in the ARView then returns a UIImage on tap when the function has run
+            passedImage = getImage(arView: arView)
             
+            //This is just passing the prediction to the other view to display it for the user.
+            passedPrediction = imDetection.imageDetectionVM.predictionLabel
+            
+            //            previousFoods(image: passedImage, name: passedPrediction)
+            lastScannedFoods.foodNameAndImage.append(LastScannedFoods(id: UUID().uuidString, foodName: predictionTitle, foodImage: getImage(arView: arView)))
+            //The food name and the sphere are both added to the parent entity for the parent entity to then track the camera. This give it the affect that the text will be facing the camera.
             parentEntity.addChild(foodName)
             parentEntity.addChild(sphere)
             
-
             textEntities.append(parentEntity)
             parentAnchor.addChild(parentEntity)
             arView.scene.anchors.append(parentAnchor)
             
 
-
         }
-
+            
+        }
+        
     }
     
+    //This function is checking to see if the user has tapped removeAllNodes. Then it will delete all of the nodes from the scene.
+    func removeAllNodesFromScene() {
+        guard let arView = arView else {return}
+        if removeAllNodes {
+            arView.scene.anchors.removeAll()
+            removeAllNodes = false
+        }
+    }
+    
+    //The function checkIfFoodOrNotFood runs every frame at the moment using the apple vision frame work. This bascially checks if the camera is looking at a food or isnt.
+    //If the camera is looking at some food it will then allow the user to be able to place a node into the scene. If not it will prompt the user to find a food for the camera to look at.
+    func checkIfFoodOrNotFood() {
+        if latestPrediction == "not" {
+            itemIsNotFood = true
+        } else {
+            itemIsNotFood = false
+        }
+    }
+    
+    //The session function is just to keep track of where the camera is for the nodes to look at.
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         guard let arView = arView else {return}
+        
+        checkIfFoodOrNotFood()
+        removeAllNodesFromScene()
         
         updateSubscription = arView.scene.subscribe(to: SceneEvents.Update.self, { event in
             self.textEntities.forEach { entity in
@@ -118,44 +146,29 @@ class Coordinator: NSObject, ARSessionDelegate {
             }
         })
     }
-
-//    func timerRunningFunction() {
-//
-//        self.predictionTitle = self.imDetection.imageDetectionVM.predictionLabel
-//        self.imageForImageDetection = self.getImageFromARSession()
-//        self.imDetection.imageDetectionVM.detect(self.imageForImageDetection)
-//    }
     
-    
-//    func runEveryFrame(){
-//
-//        let timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
-//        timer.fire()
-////        self.nameAnchor.look(at: arView.cameraTransform.translation, from: self.nameAnchor.position(relativeTo: nil), relativeTo: nil)
-//
-//        }
-//
-//    @objc func fireTimer(){
-//        print("Timer has been fired")
-////        timerRunningFunction()
-//        print("PredictionLabel: \(self.predictionTitle)")
-//        print("This is running")
-//        print("latestPrediction: \(self.latestPrediction)")
-//        modelAndClassifications()
-//
-//    }
-
-
-    
-    //To capture a still image from the ARSession to feed into the pixel Buffer for prediction. https://stackoverflow.com/questions/65215443/how-do-i-capture-still-photographs-in-a-realitykit-app
-    func getImageFromARSession() -> UIImage {
-        
-        let finishedImage = UIImage()
-        
-
-        return finishedImage
+    //This functions is to toggle the itemIsNotFood off after 3 seconds.
+    private func hasNotFoodAlertTimeFinished() async {
+        //Delaying the toggle off for 3 seconds
+        try? await Task.sleep(nanoseconds: 3_000_000_000)
+        itemIsNotFood = false
     }
 
+        //This will have to be something that I come back to in the future.
+//    func previousFoods(image: UIImage, name: String) {
+//        lastScannedFoods.foodNameAndImage.append(LastScannedFoods(id: UUID().uuidString, foodName: name, foodImage: image))
+//    }
+    
+    //This function here is how I am able to take a screen shot from the scene and use it for the ML Model.
+    func getImage(arView: ARView) -> UIImage {
+     
+        UIGraphicsBeginImageContextWithOptions(arView.bounds.size, arView.isOpaque, 0.0)
+        arView.drawHierarchy(in: arView.bounds, afterScreenUpdates: false)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return UIImage(cgImage: (image?.cgImage)!)
+        
+    }
     
     func classificationCompleteHandler(request: VNRequest, error: Error?) {
         //catch Errors
@@ -184,19 +197,30 @@ class Coordinator: NSObject, ARSessionDelegate {
 //            debugTextOnScreen += classifications
 //            print("Debug Text in console \(debugTextOnScreen)")
             
-            var objectName:String = "…"
+            var objectName: String = "…"
             objectName = classifications.components(separatedBy: "-")[0]
             objectName = objectName.components(separatedBy: ",")[0]
+            objectName = objectName.components(separatedBy: "_")[0]
             self.latestPrediction = objectName
+
         }
+    }
+        
+    func foodOrNotFoodModel() -> VNCoreMLModel {
+        
+        
+        guard let notFoodModel = try? VNCoreMLModel(for:NutrifyFoodNotFood_1().model) else {
+            fatalError("Could not load model. Enrusre model has been inserted into the xcode project")
+        }
+
+        return notFoodModel
     }
     
     func modelAndClassifications() {
         //This is to be run on view did load or view did update
-        guard let model = try? VNCoreMLModel(for: _0_0_2_FoodVisionV2_100_foods_manually_cleaned().model) else {
-            fatalError("Could not load model. Enrusre model has been inserted into the xcode project")
-        }
-        
+
+        let model = foodOrNotFoodModel()
+
         let classificationRequest = VNCoreMLRequest(model: model, completionHandler: classificationCompleteHandler)
         classificationRequest.imageCropAndScaleOption = VNImageCropAndScaleOption.centerCrop
         
@@ -210,6 +234,7 @@ class Coordinator: NSObject, ARSessionDelegate {
         dispatchQueueML.async {
             //1. Run Update
             self.updateCoreML()
+
             
             //2. loop this function
             self.loopCoreMLUpdate()

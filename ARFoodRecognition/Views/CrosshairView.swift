@@ -12,6 +12,7 @@ struct CrosshairView: View {
     
     @State var heightAndWidth: CGFloat = 299
     @State var lineWidth: CGFloat = 2
+    @Binding var itemIsNotFood: Bool
     
     var body: some View {
         
@@ -53,6 +54,6 @@ struct CrosshairView: View {
 
 struct CrosshairView_Previews: PreviewProvider {
     static var previews: some View {
-        CrosshairView()
+        CrosshairView(itemIsNotFood: .constant(false))
     }
 }

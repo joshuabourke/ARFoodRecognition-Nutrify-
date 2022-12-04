@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Saved" representedClassName="Saved" syncable="YES">
+        <attribute name="savedDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="savedFoodID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="savedFoodImage" optional="YES" attributeType="Binary"/>
+        <attribute name="savedFoodName" optional="YES" attributeType="String"/>
+        <attribute name="savedIsFoodSaved" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
+</model>

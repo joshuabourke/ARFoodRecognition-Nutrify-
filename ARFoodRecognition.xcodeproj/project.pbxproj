@@ -13,19 +13,36 @@
 		0812A29128C6EDBC00EC64D7 /* ImageDetectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0812A29028C6EDBC00EC64D7 /* ImageDetectionManager.swift */; };
 		0812A29528C6F09000EC64D7 /* ImageDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0812A29428C6F09000EC64D7 /* ImageDetection.swift */; };
 		0861B73A28CEBB5200B50E02 /* ListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0861B73928CEBB5200B50E02 /* ListItemModel.swift */; };
-		0889E46C28EA72E600DF93C8 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889E46B28EA72E600DF93C8 /* BlurView.swift */; };
-		08B4871628C988A000661D25 /* 0.0.2-FoodVisionV2-100-foods-manually-cleaned.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 08B4871528C988A000661D25 /* 0.0.2-FoodVisionV2-100-foods-manually-cleaned.mlmodel */; };
-		08B4871828C98BEE00661D25 /* EmojiFoodClassifier 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 08B4871728C98BEE00661D25 /* EmojiFoodClassifier 1.mlmodel */; };
+		0878025029343CC400617AB0 /* RemoveAllNodesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0878024F29343CC400617AB0 /* RemoveAllNodesButton.swift */; };
+		08780259293858FA00617AB0 /* ThreePredictionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08780258293858FA00617AB0 /* ThreePredictionsView.swift */; };
+		087802852939EC0800617AB0 /* CameraActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087802842939EC0800617AB0 /* CameraActionBar.swift */; };
+		087802872939EC2800617AB0 /* TopThreePredictionButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087802862939EC2800617AB0 /* TopThreePredictionButtons.swift */; };
+		087802892939EC4A00617AB0 /* CameraBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087802882939EC4A00617AB0 /* CameraBar.swift */; };
+		0878028B2939EC8800617AB0 /* TestingLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0878028A2939EC8800617AB0 /* TestingLeftView.swift */; };
+		0887B2D2292AE07A0043BD49 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0887B2D0292AE07A0043BD49 /* CoreDataModel.xcdatamodeld */; };
+		0887B2D5292AE1A40043BD49 /* Saved+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0887B2D4292AE1A40043BD49 /* Saved+CoreDataClass.swift */; };
+		0887B2D7292AE1D90043BD49 /* Saved+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0887B2D6292AE1D90043BD49 /* Saved+CoreDataProperties.swift */; };
+		0887B2D9292AE2DD0043BD49 /* MyPersistentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0887B2D8292AE2DD0043BD49 /* MyPersistentController.swift */; };
+		0887B2DB292B0A260043BD49 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0887B2DA292B0A260043BD49 /* OnBoardingView.swift */; };
+		0887B2DE292B0C3B0043BD49 /* OnBoardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0887B2DD292B0C3B0043BD49 /* OnBoardingPageView.swift */; };
+		0887B2E0292B36CA0043BD49 /* 2022-11-21-FoodVisionV2-199-foods.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0887B2DF292B36CA0043BD49 /* 2022-11-21-FoodVisionV2-199-foods.mlmodel */; };
+		089B3402292348D600EA5D71 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089B3401292348D600EA5D71 /* SheetView.swift */; };
+		089B340429234CBC00EA5D71 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089B340329234CBC00EA5D71 /* ImageExtension.swift */; };
+		089B34062923539400EA5D71 /* MiniDockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089B34052923539400EA5D71 /* MiniDockView.swift */; };
+		089B3408292356C300EA5D71 /* FoodListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089B3407292356C300EA5D71 /* FoodListView.swift */; };
+		089B340A2923577F00EA5D71 /* FoodListViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089B34092923577F00EA5D71 /* FoodListViewItem.swift */; };
 		08B4871B28CC4DB600661D25 /* CrosshairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B4871A28CC4DB600661D25 /* CrosshairView.swift */; };
 		08B4871F28CC6DDF00661D25 /* RecordsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B4871E28CC6DDF00661D25 /* RecordsListItem.swift */; };
 		08B4872328CD990A00661D25 /* NameModelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B4872228CD990A00661D25 /* NameModelEntity.swift */; };
-		08B9522428DDBCDC009DC973 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B9522328DDBCDC009DC973 /* ListView.swift */; };
 		08CD688428C5629500579FA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CD688328C5629500579FA5 /* AppDelegate.swift */; };
 		08CD688628C5629500579FA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CD688528C5629500579FA5 /* ContentView.swift */; };
 		08CD688A28C5629600579FA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08CD688928C5629600579FA5 /* Assets.xcassets */; };
 		08CD688D28C5629600579FA5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08CD688C28C5629600579FA5 /* Preview Assets.xcassets */; };
 		08CD68B728C5907A00579FA5 /* ARView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CD68B628C5907A00579FA5 /* ARView+Extension.swift */; };
 		08CD68BA28C5916000579FA5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CD68B928C5916000579FA5 /* Coordinator.swift */; };
+		08DF048E292C7AE7002F1D9B /* NutrifyFoodNotFood 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 08DF048D292C7AE7002F1D9B /* NutrifyFoodNotFood 1.mlmodel */; };
+		08DF0491292C7F84002F1D9B /* NotAFoodAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DF0490292C7F84002F1D9B /* NotAFoodAlertView.swift */; };
+		08DF04AF29341BA7002F1D9B /* ExtensionBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DF04AE29341BA7002F1D9B /* ExtensionBinding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,13 +52,27 @@
 		0812A29028C6EDBC00EC64D7 /* ImageDetectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetectionManager.swift; sourceTree = "<group>"; };
 		0812A29428C6F09000EC64D7 /* ImageDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetection.swift; sourceTree = "<group>"; };
 		0861B73928CEBB5200B50E02 /* ListItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemModel.swift; sourceTree = "<group>"; };
-		0889E46B28EA72E600DF93C8 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
-		08B4871528C988A000661D25 /* 0.0.2-FoodVisionV2-100-foods-manually-cleaned.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "0.0.2-FoodVisionV2-100-foods-manually-cleaned.mlmodel"; sourceTree = "<group>"; };
-		08B4871728C98BEE00661D25 /* EmojiFoodClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "EmojiFoodClassifier 1.mlmodel"; sourceTree = "<group>"; };
+		0878024F29343CC400617AB0 /* RemoveAllNodesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveAllNodesButton.swift; sourceTree = "<group>"; };
+		08780258293858FA00617AB0 /* ThreePredictionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreePredictionsView.swift; sourceTree = "<group>"; };
+		087802842939EC0800617AB0 /* CameraActionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraActionBar.swift; sourceTree = "<group>"; };
+		087802862939EC2800617AB0 /* TopThreePredictionButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopThreePredictionButtons.swift; sourceTree = "<group>"; };
+		087802882939EC4A00617AB0 /* CameraBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraBar.swift; sourceTree = "<group>"; };
+		0878028A2939EC8800617AB0 /* TestingLeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingLeftView.swift; sourceTree = "<group>"; };
+		0887B2D1292AE07A0043BD49 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		0887B2D4292AE1A40043BD49 /* Saved+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Saved+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0887B2D6292AE1D90043BD49 /* Saved+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Saved+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0887B2D8292AE2DD0043BD49 /* MyPersistentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPersistentController.swift; sourceTree = "<group>"; };
+		0887B2DA292B0A260043BD49 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		0887B2DD292B0C3B0043BD49 /* OnBoardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageView.swift; sourceTree = "<group>"; };
+		0887B2DF292B36CA0043BD49 /* 2022-11-21-FoodVisionV2-199-foods.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "2022-11-21-FoodVisionV2-199-foods.mlmodel"; sourceTree = "<group>"; };
+		089B3401292348D600EA5D71 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
+		089B340329234CBC00EA5D71 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
+		089B34052923539400EA5D71 /* MiniDockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniDockView.swift; sourceTree = "<group>"; };
+		089B3407292356C300EA5D71 /* FoodListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListView.swift; sourceTree = "<group>"; };
+		089B34092923577F00EA5D71 /* FoodListViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListViewItem.swift; sourceTree = "<group>"; };
 		08B4871A28CC4DB600661D25 /* CrosshairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosshairView.swift; sourceTree = "<group>"; };
 		08B4871E28CC6DDF00661D25 /* RecordsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListItem.swift; sourceTree = "<group>"; };
 		08B4872228CD990A00661D25 /* NameModelEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameModelEntity.swift; sourceTree = "<group>"; };
-		08B9522328DDBCDC009DC973 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		08CD688028C5629500579FA5 /* ARFoodRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARFoodRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08CD688328C5629500579FA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08CD688528C5629500579FA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +80,9 @@
 		08CD688C28C5629600579FA5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		08CD68B628C5907A00579FA5 /* ARView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARView+Extension.swift"; sourceTree = "<group>"; };
 		08CD68B928C5916000579FA5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		08DF048D292C7AE7002F1D9B /* NutrifyFoodNotFood 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "NutrifyFoodNotFood 1.mlmodel"; sourceTree = "<group>"; };
+		08DF0490292C7F84002F1D9B /* NotAFoodAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotAFoodAlertView.swift; sourceTree = "<group>"; };
+		08DF04AE29341BA7002F1D9B /* ExtensionBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionBinding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,14 +115,77 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		08780256293813A800617AB0 /* SecondTab(FoodList) */ = {
+			isa = PBXGroup;
+			children = (
+				089B3407292356C300EA5D71 /* FoodListView.swift */,
+				089B34092923577F00EA5D71 /* FoodListViewItem.swift */,
+			);
+			path = "SecondTab(FoodList)";
+			sourceTree = "<group>";
+		};
+		08780257293813C400617AB0 /* Mini Dock */ = {
+			isa = PBXGroup;
+			children = (
+				089B34052923539400EA5D71 /* MiniDockView.swift */,
+			);
+			path = "Mini Dock";
+			sourceTree = "<group>";
+		};
+		087802812939EA1C00617AB0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				087802842939EC0800617AB0 /* CameraActionBar.swift */,
+				087802862939EC2800617AB0 /* TopThreePredictionButtons.swift */,
+				087802882939EC4A00617AB0 /* CameraBar.swift */,
+				0878028A2939EC8800617AB0 /* TestingLeftView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		0887B2CF292AD2500043BD49 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				08CD688528C5629500579FA5 /* ContentView.swift */,
+				08CD688328C5629500579FA5 /* AppDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0887B2D3292AE0820043BD49 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0887B2D0292AE07A0043BD49 /* CoreDataModel.xcdatamodeld */,
+				0887B2D4292AE1A40043BD49 /* Saved+CoreDataClass.swift */,
+				0887B2D6292AE1D90043BD49 /* Saved+CoreDataProperties.swift */,
+				0887B2D8292AE2DD0043BD49 /* MyPersistentController.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		0887B2DC292B0C270043BD49 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				0887B2DA292B0A260043BD49 /* OnBoardingView.swift */,
+				0887B2DD292B0C3B0043BD49 /* OnBoardingPageView.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
 		08B4871928CC4DA700661D25 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				087802812939EA1C00617AB0 /* UI */,
+				08780257293813C400617AB0 /* Mini Dock */,
+				08780256293813A800617AB0 /* SecondTab(FoodList) */,
+				08DF048F292C7F72002F1D9B /* NotFood */,
+				0887B2DC292B0C270043BD49 /* OnBoarding */,
 				08B4871A28CC4DB600661D25 /* CrosshairView.swift */,
 				08B4871E28CC6DDF00661D25 /* RecordsListItem.swift */,
 				0804825928DDAFF300E257F0 /* ButtonView.swift */,
-				08B9522328DDBCDC009DC973 /* ListView.swift */,
-				0889E46B28EA72E600DF93C8 /* BlurView.swift */,
+				089B3401292348D600EA5D71 /* SheetView.swift */,
+				0878024F29343CC400617AB0 /* RemoveAllNodesButton.swift */,
+				08780258293858FA00617AB0 /* ThreePredictionsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -96,6 +193,7 @@
 		08CD687728C5629500579FA5 = {
 			isa = PBXGroup;
 			children = (
+				0887B2CF292AD2500043BD49 /* Main */,
 				08CD688228C5629500579FA5 /* ARFoodRecognition */,
 				08CD688128C5629500579FA5 /* Products */,
 			);
@@ -117,10 +215,9 @@
 				0812A28B28C6E8D700EC64D7 /* ImageDetection */,
 				08CD68B828C5915200579FA5 /* Coordinators */,
 				08CD68B528C5906100579FA5 /* Extensions */,
-				08CD688328C5629500579FA5 /* AppDelegate.swift */,
-				08CD688528C5629500579FA5 /* ContentView.swift */,
-				08B4871728C98BEE00661D25 /* EmojiFoodClassifier 1.mlmodel */,
-				08B4871528C988A000661D25 /* 0.0.2-FoodVisionV2-100-foods-manually-cleaned.mlmodel */,
+				0887B2D3292AE0820043BD49 /* CoreData */,
+				08DF048D292C7AE7002F1D9B /* NutrifyFoodNotFood 1.mlmodel */,
+				0887B2DF292B36CA0043BD49 /* 2022-11-21-FoodVisionV2-199-foods.mlmodel */,
 				08CD688928C5629600579FA5 /* Assets.xcassets */,
 				08CD688B28C5629600579FA5 /* Preview Content */,
 			);
@@ -139,6 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				08CD68B628C5907A00579FA5 /* ARView+Extension.swift */,
+				089B340329234CBC00EA5D71 /* ImageExtension.swift */,
+				08DF04AE29341BA7002F1D9B /* ExtensionBinding.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -150,6 +249,14 @@
 				08B4872228CD990A00661D25 /* NameModelEntity.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		08DF048F292C7F72002F1D9B /* NotFood */ = {
+			isa = PBXGroup;
+			children = (
+				08DF0490292C7F84002F1D9B /* NotAFoodAlertView.swift */,
+			);
+			path = NotFood;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,23 +329,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08B9522428DDBCDC009DC973 /* ListView.swift in Sources */,
 				08CD68BA28C5916000579FA5 /* Coordinator.swift in Sources */,
 				08B4871F28CC6DDF00661D25 /* RecordsListItem.swift in Sources */,
+				0887B2D2292AE07A0043BD49 /* CoreDataModel.xcdatamodeld in Sources */,
+				089B340429234CBC00EA5D71 /* ImageExtension.swift in Sources */,
+				089B340A2923577F00EA5D71 /* FoodListViewItem.swift in Sources */,
 				0804825A28DDAFF300E257F0 /* ButtonView.swift in Sources */,
 				08B4871B28CC4DB600661D25 /* CrosshairView.swift in Sources */,
-				08B4871828C98BEE00661D25 /* EmojiFoodClassifier 1.mlmodel in Sources */,
+				0887B2D5292AE1A40043BD49 /* Saved+CoreDataClass.swift in Sources */,
+				087802872939EC2800617AB0 /* TopThreePredictionButtons.swift in Sources */,
+				0887B2D9292AE2DD0043BD49 /* MyPersistentController.swift in Sources */,
 				08CD688628C5629500579FA5 /* ContentView.swift in Sources */,
+				0887B2DB292B0A260043BD49 /* OnBoardingView.swift in Sources */,
+				087802852939EC0800617AB0 /* CameraActionBar.swift in Sources */,
+				089B34062923539400EA5D71 /* MiniDockView.swift in Sources */,
+				089B3408292356C300EA5D71 /* FoodListView.swift in Sources */,
 				08B4872328CD990A00661D25 /* NameModelEntity.swift in Sources */,
 				0812A28F28C6ED7000EC64D7 /* ImageDetectionViewModel.swift in Sources */,
-				08B4871628C988A000661D25 /* 0.0.2-FoodVisionV2-100-foods-manually-cleaned.mlmodel in Sources */,
+				087802892939EC4A00617AB0 /* CameraBar.swift in Sources */,
+				08DF048E292C7AE7002F1D9B /* NutrifyFoodNotFood 1.mlmodel in Sources */,
+				08DF04AF29341BA7002F1D9B /* ExtensionBinding.swift in Sources */,
+				0887B2DE292B0C3B0043BD49 /* OnBoardingPageView.swift in Sources */,
+				0887B2E0292B36CA0043BD49 /* 2022-11-21-FoodVisionV2-199-foods.mlmodel in Sources */,
 				0812A28D28C6E8F800EC64D7 /* UIImage+Extension.swift in Sources */,
 				08CD68B728C5907A00579FA5 /* ARView+Extension.swift in Sources */,
+				0878028B2939EC8800617AB0 /* TestingLeftView.swift in Sources */,
 				0812A29528C6F09000EC64D7 /* ImageDetection.swift in Sources */,
-				0889E46C28EA72E600DF93C8 /* BlurView.swift in Sources */,
 				0812A29128C6EDBC00EC64D7 /* ImageDetectionManager.swift in Sources */,
+				08780259293858FA00617AB0 /* ThreePredictionsView.swift in Sources */,
+				089B3402292348D600EA5D71 /* SheetView.swift in Sources */,
+				0878025029343CC400617AB0 /* RemoveAllNodesButton.swift in Sources */,
 				08CD688428C5629500579FA5 /* AppDelegate.swift in Sources */,
 				0861B73A28CEBB5200B50E02 /* ListItemModel.swift in Sources */,
+				0887B2D7292AE1D90043BD49 /* Saved+CoreDataProperties.swift in Sources */,
+				08DF0491292C7F84002F1D9B /* NotAFoodAlertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +569,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0887B2D0292AE07A0043BD49 /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0887B2D1292AE07A0043BD49 /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 0887B2D1292AE07A0043BD49 /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 08CD687828C5629500579FA5 /* Project object */;
 }

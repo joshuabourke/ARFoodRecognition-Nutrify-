@@ -10,7 +10,6 @@ import SwiftUI
 
 class ViewModel: ObservableObject {
     @Published var foodNameAndImage = [LastScannedFoods]()
-    
     }
 
 struct LastScannedFoods: Identifiable {
